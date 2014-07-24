@@ -15,8 +15,6 @@
 
 (defn ^:export init
   []
-  (.log js/console (:c alan))
-  (.log js/console (take 10 ui/col-list))
   (let [input (ui/key-chan)]
     (go-loop [player alan ev (<! input)]
              (ui/draw-block player)

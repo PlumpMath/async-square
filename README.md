@@ -1,10 +1,12 @@
-# alan-and-alonzo
+# async-square
 
-A Clojure library designed to ... well, that part is up to you.
+An experiment in ClojureScritp and Core.Async. Renders a square canvas element and listens for arrow key events to move. Color of object changes recursively through an infinite lazily evaluated gradient. 
 
 ## Usage
 
-FIXME
+```
+lein ring server
+```
 
 ## License
 

@@ -11,9 +11,9 @@
 
 (defn change-color [obj]
   (let [{:keys [c cols]} obj]
-    (assoc-in
-              (assoc-in obj [:c] (first cols))
-      [:cols] (rest cols))))
+    (-> obj
+      (assoc :c (first cols))
+      (update-in [:cols] rest))))
 
 (defn render [obj com]
   (change-color (move obj com)))

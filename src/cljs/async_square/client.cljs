@@ -1,10 +1,10 @@
-(ns alan-and-alonzo.client
-  (:require [alan-and-alonzo.ui :as ui]
-            [alan-and-alonzo.game :as game]
+(ns async-square.client
+  (:require [async-square.ui :as ui]
+            [async-square.game :as game]
             [cljs.core.async :refer (<!)])
   (:require-macros [cljs.core.async.macros :refer (go-loop)]))
 
-(def alan
+(def square
   {:x 0
    :y 0
    :w 50
@@ -16,7 +16,7 @@
 (defn ^:export init
   []
   (let [input (ui/key-chan)]
-    (go-loop [player alan ev (<! input)]
-             (ui/draw-block player)
-             (recur (game/render player ev) (<! input)))))
+    (go-loop [obj square ev (<! input)]
+             (ui/draw-block obj)
+             (recur (game/render obj ev) (<! input)))))
              

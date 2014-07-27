@@ -1,4 +1,4 @@
-(ns alan-and-alonzo.game)
+(ns async-square.game)
 
 (defn move [obj com]
   (let [{:keys [x y w h v]} obj]

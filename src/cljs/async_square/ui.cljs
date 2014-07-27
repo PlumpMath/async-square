@@ -1,4 +1,4 @@
-(ns alan-and-alonzo.ui
+(ns async-square.ui
   (:require [cljs.core.async :refer (chan put!)]
             [domina.events :refer (listen!)]
             [domina :as dom]))

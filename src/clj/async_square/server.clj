@@ -1,4 +1,4 @@
-(ns alan-and-alonzo.server
+(ns async-square.server
   (:require [ring.adapter.jetty :as jetty]
             [ring.middleware.resource :refer (wrap-resource)]
             [ring.middleware.content-type :refer (wrap-content-type)]

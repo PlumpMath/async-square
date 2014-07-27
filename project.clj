@@ -1,4 +1,4 @@
-(defproject alan-and-alonzo "0.1.0-SNAPSHOT"
+(defproject async-square "0.1.0-SNAPSHOT"
   :description "FIXME: write description"
   :url "http://example.com/FIXME"
   :license {:name "Eclipse Public License"
@@ -12,8 +12,8 @@
             [lein-ring "0.8.7"]]
   :hooks [leiningen.cljsbuild]
   :source-paths ["src/clj"]
-  :main alan-and-alonzo.server
-  :ring {:handler alan-and-alonzo.server/app}
+  :main async-square.server
+  :ring {:handler async-square.server/app}
   :cljsbuild {:builds
               [{:source-paths ["src/cljs"]
                 :compiler {:output-to "resources/public/js/client.js"

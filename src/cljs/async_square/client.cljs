@@ -5,8 +5,8 @@
   (:require-macros [cljs.core.async.macros :refer (go-loop)]))
 
 (def square
-  {:x 0
-   :y 0
+  {:x 10
+   :y 10
    :w 50
    :h 50
    :v 5
@@ -16,7 +16,9 @@
 (defn ^:export init
   []
   (let [input (ui/key-chan)]
-    (go-loop [obj square ev (<! input)]
-             (ui/draw-block obj)
-             (recur (game/render obj ev) (<! input)))))
-             
+    (do
+      (ui/set-dimensions)
+      (go-loop [obj square ev (<! input)]
+               (ui/draw-block obj)
+               (recur (game/render obj ev) (<! input))))))
+               

@@ -29,11 +29,22 @@
 (def context
   (.getContext canvas "2d"))
 
+(def width
+  (- (.-innerWidth js/window) 20))
+
+(def height
+  (- (.-innerHeight js/window) 20))
+
+(defn set-dimensions []
+  (do
+    (set! (.-width canvas) width)
+    (set! (.-height canvas) height)))
+
 (defn clear-canvas
   []
   (.save context)
   (.setTransform context 1 0 0 1 0 0)
-  (.clearRect context 0 0 500 500)
+  (.clearRect context 0 0 width height)
   (.restore context))
 
 (defn draw-block [obj]
